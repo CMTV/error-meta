@@ -1,5 +1,5 @@
 {
-    "name": "error-meta",
+    "name": "@cmtv/error-meta",
     "version": "1.0.0",
     "description": "Throw errors with useful context information.",
 
