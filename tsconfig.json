@@ -1,0 +1,11 @@
+{
+    "compilerOptions":
+    {
+        "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "declaration": true,
+        "outDir": "dist"
+    },
+
+    "include": ["index.ts"]
+}
