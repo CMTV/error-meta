@@ -23,7 +23,7 @@ export function disableMetaErrors()
 
 //#endregion
 
-//#region Meta error rethrow
+//#region Functions
 
 export function withErrorMeta(meta: any, func: () => any)
 {
@@ -42,6 +42,11 @@ export function withErrorMeta(meta: any, func: () => any)
     }
 
     return result;
+}
+
+export function throwMetaError(reason: string, meta: any = null)
+{
+    new MetaError(reason, meta).throw();
 }
 
 //#endregion
@@ -121,7 +126,7 @@ export class MetaError
 
 //#endregion
 
-//#region Util
+//#region Utils
 
 function isObjWithProps(target: any)
 {
