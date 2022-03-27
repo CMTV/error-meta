@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.MetaError = exports.withErrorMeta = exports.disableMetaErrors = exports.enableMetaErrors = void 0;
+exports.MetaError = exports.throwMetaError = exports.withErrorMeta = exports.disableMetaErrors = exports.enableMetaErrors = void 0;
 var chalk_1 = __importDefault(require("chalk"));
 //#region Exceptions listener
 function listener(error) {
@@ -21,7 +21,7 @@ function disableMetaErrors() {
 }
 exports.disableMetaErrors = disableMetaErrors;
 //#endregion
-//#region Meta error rethrow
+//#region Functions
 function withErrorMeta(meta, func) {
     var result;
     try {
@@ -37,6 +37,11 @@ function withErrorMeta(meta, func) {
     return result;
 }
 exports.withErrorMeta = withErrorMeta;
+function throwMetaError(reason, meta) {
+    if (meta === void 0) { meta = null; }
+    new MetaError(reason, meta)["throw"]();
+}
+exports.throwMetaError = throwMetaError;
 //#endregion
 //#region Meta error class
 var MetaError = /** @class */ (function () {
@@ -87,7 +92,7 @@ var MetaError = /** @class */ (function () {
 }());
 exports.MetaError = MetaError;
 //#endregion
-//#region Util
+//#region Utils
 function isObjWithProps(target) {
     if (typeof target !== 'object')
         return false;
