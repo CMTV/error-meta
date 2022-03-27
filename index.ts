@@ -26,7 +26,7 @@ export function disableMetaErrors()
 
 //#region Functions
 
-export function withErrorMeta(meta: any, func: () => any)
+export function withErrorMeta(func: () => any, meta: any)
 {
     let result;
 

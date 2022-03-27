@@ -23,7 +23,7 @@ function disableMetaErrors() {
 exports.disableMetaErrors = disableMetaErrors;
 //#endregion
 //#region Functions
-function withErrorMeta(meta, func) {
+function withErrorMeta(func, meta) {
     var result;
     try {
         func();
