@@ -9,6 +9,7 @@ var chalk_1 = __importDefault(require("chalk"));
 function listener(error) {
     if (error instanceof MetaError) {
         error.print();
+        console.log();
         process.exit(1);
     }
 }
@@ -79,7 +80,7 @@ var MetaError = /** @class */ (function () {
             Object.keys(meta).forEach(function (label, i) {
                 if (i !== 0)
                     console.log();
-                console.log(chalk_1["default"].bold.whiteBright(label));
+                console.log(chalk_1["default"].bold.whiteBright(label + ':'));
                 console.log(meta[label]);
             });
         }
@@ -105,3 +106,5 @@ function isObjWithProps(target) {
     }
 }
 //#endregion
+enableMetaErrors();
+throwMetaError('sdflsdf', 'sdf');

@@ -7,6 +7,7 @@ function listener(error)
     if (error instanceof MetaError)
     {
         error.print();
+        console.log();
         process.exit(1);
     }
 }
@@ -112,7 +113,7 @@ export class MetaError
                 if (i !== 0)
                     console.log();
 
-                console.log(chalk.bold.whiteBright(label));
+                console.log(chalk.bold.whiteBright(label + ':'));
                 console.log(meta[label]);
             });
         }
@@ -138,3 +139,6 @@ function isObjWithProps(target: any)
 }
 
 //#endregion
+
+enableMetaErrors();
+throwMetaError('sdflsdf', 'sdf');
