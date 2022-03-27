@@ -139,6 +139,3 @@ function isObjWithProps(target: any)
 }
 
 //#endregion
-
-enableMetaErrors();
-throwMetaError('sdflsdf', 'sdf');

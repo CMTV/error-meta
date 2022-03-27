@@ -106,5 +106,3 @@ function isObjWithProps(target) {
     }
 }
 //#endregion
-enableMetaErrors();
-throwMetaError('sdflsdf', 'sdf');
