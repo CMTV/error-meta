@@ -57,7 +57,8 @@ var MetaError = /** @class */ (function () {
         this.metaItems.push(meta);
     };
     MetaError.prototype["throw"] = function () {
-        this.stack = (new Error()).stack;
+        if (!this.stack)
+            this.stack = (new Error()).stack;
         throw this;
     };
     MetaError.prototype.print = function () {

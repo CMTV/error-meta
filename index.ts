@@ -76,7 +76,9 @@ export class MetaError
 
     throw()
     {
-        this.stack = (new Error()).stack;
+        if (!this.stack)
+            this.stack = (new Error()).stack;
+
         throw this;
     }
 
