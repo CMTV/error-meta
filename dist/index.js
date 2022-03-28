@@ -26,7 +26,7 @@ exports.disableMetaErrors = disableMetaErrors;
 function withErrorMeta(func, meta) {
     var result;
     try {
-        func();
+        result = func();
     }
     catch (error) {
         if (error instanceof MetaError) {

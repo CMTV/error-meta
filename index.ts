@@ -30,7 +30,7 @@ export function withErrorMeta(func: () => any, meta: any)
 {
     let result;
 
-    try { func(); }
+    try { result = func(); }
     catch (error)
     {
         if (error instanceof MetaError)
